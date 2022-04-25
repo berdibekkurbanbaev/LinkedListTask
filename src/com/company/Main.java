@@ -21,17 +21,14 @@ public class Main {
         LinkedList<AbstraktAnimal> cats = new LinkedList<>();
         ArrayList<AbstraktAnimal> anima = new ArrayList<>(cats);
         LinkedList<AbstraktAnimal> animalsOrder = new LinkedList<>();
-
         for (int i = 0; i < 50; i++) {
             animals.add((new Cat(num, random.nextInt(1, 10))));
             animals.add(new Dog(num, random.nextInt(1, 15)));
             num++;
             counterOfCats++;
             counterOfDogs++;
-
         }
         num = 1;
-
         for (int i = 0; i < animals.size(); i++) {
             if (animals.get(i) instanceof Cat) {
                 count++;
@@ -41,7 +38,6 @@ public class Main {
                 count = 0;
             }
         }
-
         for (int i = 0; i < animals.size(); i++) {
             if (animals.get(i) instanceof Dog) {
                 count1++;
@@ -53,15 +49,12 @@ public class Main {
                 }
             }
         }
-
         for (int i = 1; i < animals.size(); i++) {
             if (animals.get(i) instanceof Cat) {
                 if (animals.get(i - 1) instanceof Mouse || animals.get(i + 1) instanceof Mouse) {
                     cats.add(animals.get(i));
                     animals.remove(animals.get(i));
-
                 }
-
             }
         }
         for (int i = 0; i < animals.size(); i++) {
@@ -86,19 +79,27 @@ public class Main {
                     animalsOrder.addLast(animals.get(i));
                 }
             }
+        for (int i = 0; i < animals.size() ; i++) {
+            if(animals.get(i)instanceof Cat){
+                anima.add(animals.get(i));
+            }
+
+        }
+        for (AbstraktAnimal ani: anima) {
+            System.out.println(ani);
+
+        }
 
         for (AbstraktAnimal a:animals) {
 //            System.out.println(a);
-
         }
         for (AbstraktAnimal an:animalsOrder) {
-            System.out.println(an);
-
+//            System.out.println(an);
         }
         System.out.println();
-        System.out.println(counterOfMouse+" mice");
         System.out.println(counterOfCats+" cats");
         System.out.println(counterOfDogs+" dogs");
+        System.out.println(counterOfMouse+" mice");
         System.out.println();
         System.out.print("summa age of cats: "+ sumAgeCat+" ");
         System.out.println();
@@ -106,7 +107,7 @@ public class Main {
         System.out.println();
         System.out.print("summa age of mice: "+ sumAgeMouse+" ");
 
-            }
+    }
 
 
 
